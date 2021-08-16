@@ -1,6 +1,11 @@
+using Loja.Domain.Interfaces;
+using Loja.Domain.Models;
+using Loja.Service.Data;
+using Loja.Service.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -26,6 +31,10 @@ namespace Loja.UI
        
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //Configuração do DbContext
+            services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("Context")));
+
             services.AddMvc();
             services.AddRazorPages();
             services.AddSwaggerGen(s =>
@@ -36,6 +45,12 @@ namespace Loja.UI
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 s.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
             });
+
+            // Tipos de ciclo de vida do objeto: 
+            // Transciente: Obtém uma nova instância do objeto a cada solicitação
+            // Scoped: Reutiliza a mesma instância do objeto durante todo o request(web)
+            // Singleton: Utiliza a mesma instância para toda a aplicação(cuidado em casos de utilização de mais de um servidor)
+            services.AddScoped<IUsuario, UsuarioRepository>();
         }
 
        

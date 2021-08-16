@@ -4,11 +4,11 @@
         <name>Loja.UI</name>
     </assembly>
     <members>
-        <member name="M:Loja.UI.Controllers.UsuarioController.obterUsuario(System.Int32)">
+        <member name="M:Loja.UI.Controllers.UsuarioController.obterUsuario(Loja.Domain.Models.Usuario)">
             <summary>
-            teste
+            Obtem um Usuário por ID
             </summary>
-            <param name="Id"></param>
+            <param name="usuario"></param>
             <returns></returns>
         </member>
     </members>

@@ -1,0 +1,8 @@
+C:\devOut\Sistema_Loja\Loja.Domain\bin\Debug\netcoreapp3.1\Loja.Domain.deps.json
+C:\devOut\Sistema_Loja\Loja.Domain\bin\Debug\netcoreapp3.1\Loja.Domain.dll
+C:\devOut\Sistema_Loja\Loja.Domain\bin\Debug\netcoreapp3.1\Loja.Domain.pdb
+C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.AssemblyInfoInputs.cache
+C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.AssemblyInfo.cs
+C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.csproj.CoreCompileInputs.cache
+C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.dll
+C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.pdb
