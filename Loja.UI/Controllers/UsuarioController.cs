@@ -22,21 +22,20 @@ namespace Loja.UI.Controllers
         /// <summary>
         /// Obtem um Usuário por ID
         /// </summary>
-        /// <param name="usuario"></param>
+        /// <param name="id"></param>
         /// <returns></returns>
         [HttpGet("obterUsuario")]
-        public IActionResult obterUsuario(Usuario usuario)
+        public async Task<IActionResult> obterUsuario(int id)
         {
             try
             {
-                var GetUsuario = _usuarioRepository.ObterUsuario(usuario.Id);
+                var GetUsuario = await _usuarioRepository.ObterUsuario(id);
                 return Ok(GetUsuario);
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
-            }
-
+            }    
 
         }
     }
