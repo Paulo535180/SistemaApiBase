@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Loja.UI</name>
+    </assembly>
+    <members>
+        <member name="M:Loja.UI.Controllers.UsuarioController.obterUsuario(System.Int32)">
+            <summary>
+            teste
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
