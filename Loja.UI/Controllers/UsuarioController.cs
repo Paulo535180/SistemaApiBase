@@ -18,25 +18,22 @@ namespace Loja.UI.Controllers
             _usuarioRepository = usuario;
         }
 
-
-        /// <summary>
-        /// Obtem um Usuário por ID
-        /// </summary>
-        /// <param name="id"></param>
-        /// <returns></returns>
-        [HttpGet("obterUsuario")]
-        public async Task<IActionResult> obterUsuario(int id)
+        [HttpPost]
+        public async Task<IActionResult> CriarUsuario([FromBody] Usuario usuario)
         {
             try
             {
-                var GetUsuario = await _usuarioRepository.ObterUsuario(id);
-                return Ok(GetUsuario);
+                if (ModelState.IsValid)
+                {
+                    await _usuarioRepository.Insert(usuario);
+                    return StatusCode(201, "Objeto criado");
+                }
+                throw new Exception("Modelo inválido");     
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
-            }    
-
+            }
         }
     }
 }

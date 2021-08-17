@@ -2,7 +2,9 @@
 using Loja.Domain.Models;
 using Loja.Service.Data;
 using System;
+using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Loja.Service.Repository
@@ -14,19 +16,41 @@ namespace Loja.Service.Repository
         {
             _context = context;
         }
-        public async Task<Usuario> ObterUsuario(int id)
+
+        public IList<Usuario> SelectAll()
         {
-            var usuario = new Usuario
-            {
-                Nome = "Paulo Ricardo Lima Aguiar",
-                Cpf = "468.197.308-45",
-                Data_Nascimento = DateTime.Now,
-                Email = "Paulo535180@gmail.com",
-                Login = "Paulo_rla",
-                Senha = "38785351",
-                Id = 1
-            };
-            return usuario;
+            return _context.Set<Usuario>().ToList();            
         }
+
+        public async Task<Usuario> SelectId(int id)
+        {
+            return await _context.FindAsync<Usuario>(id);
+        }
+        public async Task Insert(Usuario usuario)
+        {
+            _context.Set<Usuario>().Add(usuario);
+            await SaveChanges();
+        }
+        public async Task Update(Usuario usuario)
+        {
+            _context.Update(usuario);
+            await SaveChanges();
+        }
+        public async Task Delete(int id)
+        {
+            _context.Remove(id);
+            await SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            _context?.Dispose();
+        }
+
+        public virtual async Task<int> SaveChanges()
+        {
+            return await _context.SaveChangesAsync();
+        }
+
     }
 }

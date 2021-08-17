@@ -27,5 +27,10 @@ namespace Loja.Domain.Models
         public string Senha { get; set; }
 
         public DateTime Data_Nascimento { get; set; }
+        public bool Status { get; set; }
+        public DateTime? Data_Criacao { get; set; }
+        public string Usuario_Criacao { get; set; }
+        public DateTime? Data_Alteracao { get; set; }
+        public string Usuario_Alteracao { get; set; }
     }
 }

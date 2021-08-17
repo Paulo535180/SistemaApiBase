@@ -6,3 +6,4 @@ C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.AssemblyI
 C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.csproj.CoreCompileInputs.cache
 C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.dll
 C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.pdb
+C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.csproj.AssemblyReference.cache
