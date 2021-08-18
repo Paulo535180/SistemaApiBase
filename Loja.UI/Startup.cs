@@ -45,6 +45,7 @@ namespace Loja.UI
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 s.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
             });
+            services.AddCors();
 
             // Tipos de ciclo de vida do objeto: 
             // Transciente: Obtém uma nova instância do objeto a cada solicitação
@@ -73,6 +74,8 @@ namespace Loja.UI
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors(cors => cors.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             app.UseEndpoints(endpoints =>
             {
