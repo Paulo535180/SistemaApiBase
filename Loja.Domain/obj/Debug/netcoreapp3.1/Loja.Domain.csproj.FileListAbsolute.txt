@@ -7,3 +7,12 @@ C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.csproj.Co
 C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.dll
 C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.pdb
 C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.csproj.AssemblyReference.cache
+C:\dev\Sistema_Loja\SistemaApiBase\Loja.Domain\bin\Debug\netcoreapp3.1\Loja.Domain.deps.json
+C:\dev\Sistema_Loja\SistemaApiBase\Loja.Domain\bin\Debug\netcoreapp3.1\Loja.Domain.dll
+C:\dev\Sistema_Loja\SistemaApiBase\Loja.Domain\bin\Debug\netcoreapp3.1\Loja.Domain.pdb
+C:\dev\Sistema_Loja\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.csprojAssemblyReference.cache
+C:\dev\Sistema_Loja\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.AssemblyInfoInputs.cache
+C:\dev\Sistema_Loja\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.AssemblyInfo.cs
+C:\dev\Sistema_Loja\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.csproj.CoreCompileInputs.cache
+C:\dev\Sistema_Loja\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.dll
+C:\dev\Sistema_Loja\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.pdb

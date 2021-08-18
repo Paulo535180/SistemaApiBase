@@ -25,10 +25,15 @@ namespace Loja.UI.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    await _usuarioRepository.Insert(usuario);
-                    return StatusCode(201, "Objeto criado");
+                    var usuarioExiste = _usuarioRepository.SelectId(usuario.ID);
+                    if (usuario != null)
+                    {
+                        await _usuarioRepository.Insert(usuario);
+                        return StatusCode(201, "Objeto criado");
+                    }
+                    throw new Exception("Usuário já existe na Base de Dados!");
                 }
-                throw new Exception("Modelo inválido");     
+                throw new Exception("Modelo inválido");
             }
             catch (Exception ex)
             {
