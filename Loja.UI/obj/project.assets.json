@@ -5881,19 +5881,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Paulo Ricardo\\.nuget\\packages\\": {}
+    "C:\\Users\\paulo.aguiar\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\Sistema_Loja\\SistemaApiBase\\Loja.UI\\Loja.UI.csproj",
+      "projectUniqueName": "C:\\devOut\\Sistema_Loja\\Loja.UI\\Loja.UI.csproj",
       "projectName": "Loja.UI",
-      "projectPath": "C:\\dev\\Sistema_Loja\\SistemaApiBase\\Loja.UI\\Loja.UI.csproj",
-      "packagesPath": "C:\\Users\\Paulo Ricardo\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\Sistema_Loja\\SistemaApiBase\\Loja.UI\\obj\\",
+      "projectPath": "C:\\devOut\\Sistema_Loja\\Loja.UI\\Loja.UI.csproj",
+      "packagesPath": "C:\\Users\\paulo.aguiar\\.nuget\\packages\\",
+      "outputPath": "C:\\devOut\\Sistema_Loja\\Loja.UI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Paulo Ricardo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\paulo.aguiar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5907,11 +5912,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\dev\\Sistema_Loja\\SistemaApiBase\\Loja.Domain\\Loja.Domain.csproj": {
-              "projectPath": "C:\\dev\\Sistema_Loja\\SistemaApiBase\\Loja.Domain\\Loja.Domain.csproj"
+            "C:\\devOut\\Sistema_Loja\\Loja.Domain\\Loja.Domain.csproj": {
+              "projectPath": "C:\\devOut\\Sistema_Loja\\Loja.Domain\\Loja.Domain.csproj"
             },
-            "C:\\dev\\Sistema_Loja\\SistemaApiBase\\Loja.Service\\Loja.Service.csproj": {
-              "projectPath": "C:\\dev\\Sistema_Loja\\SistemaApiBase\\Loja.Service\\Loja.Service.csproj"
+            "C:\\devOut\\Sistema_Loja\\Loja.Service\\Loja.Service.csproj": {
+              "projectPath": "C:\\devOut\\Sistema_Loja\\Loja.Service\\Loja.Service.csproj"
             }
           }
         }
@@ -5949,12 +5954,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[3.1.13, 3.1.13]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -5963,7 +5962,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }
