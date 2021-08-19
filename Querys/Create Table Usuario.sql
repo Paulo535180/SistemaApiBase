@@ -1,4 +1,4 @@
-USE [DBPrincipal]
+USE [DTIC_HOMOLOGACAO_V1]
 GO
 
 /****** Object:  Table [dbo].[UUSUARIO]    Script Date: 17/08/2021 13:26:38 ******/
@@ -14,7 +14,9 @@ CREATE TABLE [dbo].[PRLA_Usuario](
 	[CPF] [varchar](200) NOT NULL,
 	[EMAIL] [varchar](200) NOT NULL,
 	[LOGIN] [varchar](200) NOT NULL,
-	[SENHA] [varchar](200) NOT NULL,	
+	[SENHA] [varchar](200) NOT NULL,
+	[FOTO][varchar](max) null,
+	[TELEFONE][varchar](20) null,
 	[DATA_NASCIMENTO] [datetime],
 	[STATUS] [bit] NOT NULL Default 1,
 	[DATA_CRIACAO][datetime] NOT NULL,

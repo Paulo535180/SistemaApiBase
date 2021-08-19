@@ -1,37 +1,39 @@
 ﻿using Loja.Domain.Interfaces;
 using Loja.Domain.Models;
 using Loja.Service.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Loja.Service.Repository
 {
-    public class UsuarioRepository : IUsuario
+    public class UsuarioPerfilRepository : IUsuarioPerfil
     {
         private readonly Context _context;
-        public UsuarioRepository(Context context)
+        public UsuarioPerfilRepository(Context context)
         {
             _context = context;
         }
 
-        public IList<Usuario> SelectAll()
+        public IList<UsuarioPerfil> SelectAll()
         {
-            return  _context.Set<Usuario>().ToList();            
+            return _context.Set<UsuarioPerfil>().ToList();
         }
 
-        public async Task<Usuario> SelectId(int id)
+        public async Task<UsuarioPerfil> SelectId(int id)
         {
-            return await _context.FindAsync<Usuario>(id);
+            return await _context.FindAsync<UsuarioPerfil>(id);
         }
-        public async Task Insert(Usuario usuario)
+        public async Task Insert(UsuarioPerfil usuarioPerfil)
         {
-            _context.Set<Usuario>().Add(usuario);
+            _context.Set<UsuarioPerfil>().Add(usuarioPerfil);
             await SaveChanges();
         }
-        public async Task Update(Usuario usuario)
+        public async Task Update(UsuarioPerfil usuarioPerfil)
         {
-            _context.Update(usuario);
+            _context.Update(usuarioPerfil);
             await SaveChanges();
         }
         public async Task Delete(int id)
@@ -40,9 +42,9 @@ namespace Loja.Service.Repository
             await SaveChanges();
         }
 
-        public async Task DeleteRange(Usuario[] usuarios)
+        public async Task DeleteRange(UsuarioPerfil[] UsuarioPerfis)
         {
-            _context.RemoveRange(usuarios);
+            _context.RemoveRange(UsuarioPerfis);
             await SaveChanges();
         }
 
@@ -55,6 +57,5 @@ namespace Loja.Service.Repository
         {
             return await _context.SaveChangesAsync();
         }
-       
     }
 }

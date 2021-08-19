@@ -15,7 +15,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    CollapseModule.forRoot(),],
+    CollapseModule.forRoot(),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -34,7 +34,7 @@ namespace Loja.UI
 
             //Configuração do DbContext
             services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("Context")));
-
+            services.AddCors();
             services.AddMvc();
             services.AddRazorPages();
             services.AddSwaggerGen(s =>
@@ -45,7 +45,7 @@ namespace Loja.UI
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 s.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
             });
-            services.AddCors();
+            
 
             // Tipos de ciclo de vida do objeto: 
             // Transciente: Obtém uma nova instância do objeto a cada solicitação

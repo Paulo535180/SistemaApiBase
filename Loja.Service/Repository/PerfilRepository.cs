@@ -1,37 +1,38 @@
-﻿using Loja.Domain.Interfaces;
-using Loja.Domain.Models;
+﻿using Loja.Domain.Models;
 using Loja.Service.Data;
+using Loja.Service.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace Loja.Service.Repository
 {
-    public class UsuarioRepository : IUsuario
+    public class PerfilRepository : IPerfil
     {
         private readonly Context _context;
-        public UsuarioRepository(Context context)
+        public PerfilRepository(Context context)
         {
             _context = context;
         }
-
-        public IList<Usuario> SelectAll()
+        public IList<Perfil> SelectAll()
         {
-            return  _context.Set<Usuario>().ToList();            
+            return _context.Set<Perfil>().ToList();
         }
 
-        public async Task<Usuario> SelectId(int id)
+        public async Task<Perfil> SelectId(int id)
         {
-            return await _context.FindAsync<Usuario>(id);
+            return await _context.FindAsync<Perfil>(id);
         }
-        public async Task Insert(Usuario usuario)
+        public async Task Insert(Perfil perfil)
         {
-            _context.Set<Usuario>().Add(usuario);
+            _context.Set<Perfil>().Add(perfil);
             await SaveChanges();
         }
-        public async Task Update(Usuario usuario)
+        public async Task Update(Perfil perfil)
         {
-            _context.Update(usuario);
+            _context.Update(perfil);
             await SaveChanges();
         }
         public async Task Delete(int id)
@@ -40,9 +41,9 @@ namespace Loja.Service.Repository
             await SaveChanges();
         }
 
-        public async Task DeleteRange(Usuario[] usuarios)
+        public async Task DeleteRange(Perfil[] perfis)
         {
-            _context.RemoveRange(usuarios);
+            _context.RemoveRange(perfis);
             await SaveChanges();
         }
 
@@ -55,6 +56,5 @@ namespace Loja.Service.Repository
         {
             return await _context.SaveChangesAsync();
         }
-       
     }
 }

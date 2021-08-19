@@ -19,14 +19,19 @@ namespace Loja.Domain.Models
         public string CPF { get; set; }
 
         [Required(ErrorMessage = "Campo Email é obrigatório!")]
+        //[RegularExpression(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")]
         public string EMAIL { get; set; }
 
         [Required(ErrorMessage = "Campo Login é obrigatório!")]
-        //[RegularExpression(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")]
+        
         public string LOGIN { get; set; }
 
         [Required(ErrorMessage = "Senha obrigatória!")]
         public string SENHA { get; set; }
+
+        public string FOTO { get; set; }
+
+        public string TELEFONE { get; set; }
 
         public DateTime? DATA_NASCIMENTO { get; set; }
         public bool STATUS { get; set; }

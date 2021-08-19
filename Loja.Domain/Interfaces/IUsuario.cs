@@ -11,5 +11,6 @@ namespace Loja.Domain.Interfaces
         Task Insert(Usuario usuario);
         Task Update(Usuario usuario);
         Task Delete(int id);
+        Task DeleteRange(Usuario[] usuarios);
     }
 }
