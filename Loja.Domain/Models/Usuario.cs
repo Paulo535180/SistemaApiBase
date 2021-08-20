@@ -1,8 +1,10 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
+using System.Text.Json.Serialization;
 
 namespace Loja.Domain.Models
 {
@@ -19,7 +21,7 @@ namespace Loja.Domain.Models
         public string CPF { get; set; }
 
         [Required(ErrorMessage = "Campo Email é obrigatório!")]
-        //[RegularExpression(@"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")]
+       
         public string EMAIL { get; set; }
 
         [Required(ErrorMessage = "Campo Login é obrigatório!")]
@@ -33,11 +35,17 @@ namespace Loja.Domain.Models
 
         public string TELEFONE { get; set; }
 
+        [JsonPropertyName("data_nascimento")]
         public DateTime? DATA_NASCIMENTO { get; set; }
+
         public bool STATUS { get; set; }
+
         public DateTime? DATA_CRIACAO { get; set; }
+
         public string USUARIO_CRIACAO { get; set; }
+
         public DateTime? DATA_ALTERACAO { get; set; }
+
         public string USUARIO_ALTERACAO { get; set; }
     }
 }
