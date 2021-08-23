@@ -16,10 +16,14 @@ import { NgxSpinnerModule } from "ngx-spinner";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
+import { UsuarioListaComponent } from './components/usuario/usuario-lista/usuario-lista.component';
+import { UsuarioDetalheComponent } from './components/usuario/usuario-detalhe/usuario-detalhe.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { PerfisComponent } from './components/perfis/perfis.component';
-import { InicioComponent } from './components/inicio/inicio.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TituloComponent } from './shared/titulo/titulo.component';
+import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { LoginComponent } from './components/login/login.component';
 
 //SERVICES
 import { UsuarioService } from './services/Usuario.service';
@@ -28,18 +32,25 @@ import { UsuarioService } from './services/Usuario.service';
 import { DateTimeFormatPipe } from './helpers/DateTimeFormat.pipe';
 import { CpfFormatPipe } from './helpers/CpfFormat.pipe';
 
+//DATATABLES
+import { DataTablesModule } from "angular-datatables";
+
 @NgModule({
 
   declarations: [
     AppComponent,
     UsuarioComponent,
     NavComponent,
-    InicioComponent,
+    DashboardComponent,
     PerfisComponent,
     TituloComponent,
     DateTimeFormatPipe,
-    CpfFormatPipe
-  ],
+    CpfFormatPipe,
+    UsuarioDetalheComponent,
+    UsuarioListaComponent,
+    LoginComponent,
+    CadastroComponent
+   ],
 
   imports: [
     BrowserModule,
@@ -60,6 +71,7 @@ import { CpfFormatPipe } from './helpers/CpfFormat.pipe';
       }
     ),
     NgxSpinnerModule,
+    DataTablesModule
   ],
 
   providers: [
@@ -69,4 +81,6 @@ import { CpfFormatPipe } from './helpers/CpfFormat.pipe';
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule {}
+export class AppModule {
+
+}

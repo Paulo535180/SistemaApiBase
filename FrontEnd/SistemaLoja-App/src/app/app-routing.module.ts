@@ -1,15 +1,31 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { InicioComponent } from './components/inicio/inicio.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { PerfisComponent } from './components/perfis/perfis.component';
+import { CadastroComponent } from './components/cadastro/cadastro.component';
+import { LoginComponent } from './components/login/login.component';
+import { UsuarioDetalheComponent } from './components/usuario/usuario-detalhe/usuario-detalhe.component';
+import { UsuarioListaComponent } from './components/usuario/usuario-lista/usuario-lista.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 
 const routes: Routes = [
-  {path: 'usuario', component: UsuarioComponent},
+  {path: 'cadastro', component: CadastroComponent},
+  {path: 'login', component: LoginComponent},
+
+  {path: 'usuario', redirectTo: 'usuario/listagem' },
+  {path: 'usuario', component: UsuarioComponent,
+    children:
+    [
+    {path: 'detalhe', component: UsuarioDetalheComponent},
+    {path: 'detalhe/:id', component: UsuarioDetalheComponent},
+    {path: 'listagem', component: UsuarioListaComponent},
+    ]
+  },
+
   {path: 'perfil', component: PerfisComponent},
-  {path: 'inicio', component: InicioComponent},
-  {path: '', redirectTo:'inicio', pathMatch: 'full'},
-  {path: '**', redirectTo:'inicio', pathMatch: 'full'}
+  {path: 'dashboard', component: DashboardComponent},
+  {path: '', redirectTo:'dashboard', pathMatch: 'full'},
+  {path: '**', redirectTo:'dashboard', pathMatch: 'full'}
 ];
 
 @NgModule({
