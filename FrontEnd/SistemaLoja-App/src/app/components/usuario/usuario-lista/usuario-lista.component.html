@@ -1,7 +1,20 @@
-<app-titulo [titulo]="'Usuarios'" [iconClass]="'fas fa-users'"></app-titulo>
+<div class="d-flex align-itens-center p-3 my-3 text-white bg-dark rounded shadow-sm">
+  <div class="d-flex align align-items-center mr-auto">
+    <i class="fas fa-users mt-2 mr-2" style="font-size:27px !important"></i>
+    <div class="lh-100">
+      <h2 class="mb-0">Usuarios</h2>
+      <small>Registro dos Usuários existentes no sistema</small>
+    </div>
+  </div>
 
-<div class="card shadow-sm p-3">
-  <table datatable [dtOptions]="dtOptions" class="table table-sm table-hover">
+  <div *ngIf="botaoAdicionar == true">
+    <button class="btn btn-outline-light mt-3" (click)="modalAdicionarUsuario()"><i class="fas fa-plus-circle"></i> Adicionar Usuário
+    </button>
+  </div>
+
+</div>
+<div class="card shadow-sm p-3" >
+  <table class="table table-sm table-hover">
     <thead class="thead-dark"  style="text-align: center;">
       <tr>
         <th scope="col">#ID</th>
@@ -28,11 +41,14 @@
         <td>{{usuario.email}}</td>
         <td>{{usuario.cpf | CpfFormat}}</td>
         <td>{{usuario.telefone}}</td>
-        <td>{{usuario.status}}</td>
+        <td>
+          <button type="button" class="btn btn-success btn-sm" *ngIf="usuario.status == true"><i class="fas fa-power-off"></i></button>
+          <button type="button" class="btn btn-danger" *ngIf="usuario.status != true"><i class="fas fa-power-off"></i></button>
+        </td>
         <td>
 
           <button type="button" class="btn btn-danger btn-sm mr-2" tooltip="Desativar" (click)="openModal(template)"><i class="fas fa-power-off mr-1" ></i>Desativar</button>
-          <button type="button" class="btn btn-warning btn-sm" tooltip="Editar" (click)="detalhesUsuario(usuario.id)" routerLink="/usuario/detalhe"><i class="fa fa-edit mr-1"></i>Editar</button>
+          <button type="button" class="btn btn-warning btn-sm"  tooltip="Editar"><i class="fa fa-edit mr-1"></i>Editar</button>
 
         </td>
         <td *ngIf="exibirImagem == true">{{usuario.foto}}</td>
@@ -49,5 +65,22 @@
     <button type="button" class="btn btn-primary" (click)="decline()" >Não</button>
   </div>
 </ng-template>
-<router-outlet></router-outlet>
 
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1"
+     role="dialog" aria-labelledby="dialog-sizes-name1">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-sizes-name1" class="modal-title pull-left">Cadastro de Usuário</h4>
+
+      </div>
+
+      <div class="modal-body">
+        <app-cadastro [ocultar]=true (evento)="lgModal.hide()"></app-cadastro>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

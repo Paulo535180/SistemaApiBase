@@ -10,7 +10,7 @@ export class TituloComponent implements OnInit {
   @Input() titulo : string = '';
   @Input() iconClass: string = '';
   @Input() subtitulo: string='';
-  @Input () botaoListar = true
+  @Input () botaoAdicionar = true
 
   constructor(private router:Router) { }
 

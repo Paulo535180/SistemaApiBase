@@ -1,6 +1,7 @@
 using Loja.Domain.Interfaces;
 using Loja.Domain.Models;
 using Loja.Service.Data;
+using Loja.Service.Interfaces;
 using Loja.Service.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -52,6 +53,7 @@ namespace Loja.UI
             // Scoped: Reutiliza a mesma instância do objeto durante todo o request(web)
             // Singleton: Utiliza a mesma instância para toda a aplicação(cuidado em casos de utilização de mais de um servidor)
             services.AddScoped<IUsuario, UsuarioRepository>();
+            services.AddScoped<IPerfil, PerfilRepository>();
         }
 
        

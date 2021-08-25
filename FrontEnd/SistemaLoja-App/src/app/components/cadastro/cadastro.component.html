@@ -1,81 +1,92 @@
 <div class="row mt-4">
-
-	<div class="col-md-6 d-none d-md-block" style="height: 450px;">
+	<div [ngClass]="apresentacaoImagem()">
 		<div class="text-center col-md-12 my-auto side-heder">
 			<h1>Cadastro de Usuário</h1>
 			<img src="/assets/registerImage.png" style="background-size: 1200px 800px;background-repeat: no-repeat;" class="my-4" id="imgForm" alt="" width="500px">
 		</div>
 	</div>
 
-	<div class="col-md-6">
+	<div [ngClass]="apresentacaoFormulario()" class="col-md-6">
 
-		<form class="p-1">
-      <div class="pb-2 d-block d-md-none">
+		<form class="p-1" [formGroup]="formulario">
+      <div *ngIf=!ocultar class="pb-2 d-block d-md-none">
         <h3 class="border-bottom">Cadastro de Usuário</h3>
       </div>
       <div class="form-row">
         <div class="form-group col-sm-12">
           <label>Nome Completo</label>
-          <input type="text" class="form-control" placeholder="Insira o nome completo" />
+          <input type="text" class="form-control" placeholder="Insira o nome completo" formControlName="nome" [ngClass]="{'is-invalid' : formulario.get('nome').errors && formulario.get('nome').touched }" />
+          <div *ngIf="formulario.get('nome').hasError('required')" class="invalid-feedback">Nome obrigatório</div>
+          <div *ngIf="formulario.get('nome').hasError('minlength')" class="invalid-feedback">Minimo 10 caracteres</div>
+          <div *ngIf="formulario.get('nome').hasError('maxlength')" class="invalid-feedback">Máximo 100 caracteres</div>
         </div>
 
       </div>
       <div class="form-group">
         <label for="">Email:</label>
-        <input class="form-control" type="text" placeholder="Insira o Nome Completo" />
+        <input class="form-control" type="text" placeholder="Insira o email" formControlName="email" [ngClass]="{'is-invalid' : formulario.get('email').errors && formulario.get('email').touched }"/>
+        <div class="invalid-feedback">E-mail inválido</div>
       </div>
       <div class="form-row">
       <div class="form-group col-sm-6">
-        <label for="">Usuario:</label>
-        <input class="form-control" type="text" placeholder="Insira o nome de Usuário/Login" />
+        <label for="">Login:</label>
+        <input class="form-control" type="text" placeholder="Insira o nome de Usuário/Login" formControlName="login" [ngClass]="{'is-invalid' : formulario.get('login').errors && formulario.get('login').touched }" />
+        <div class="invalid-feedback">Login obrigatório</div>
       </div>
       <div class="form-group col-sm-6">
         <label for="">Telefone:</label>
-        <input class="form-control" type="text" placeholder="Insira o Número de Telefone" />
+        <input class="form-control" type="text" formControlName="telefone" placeholder="Insira o Número de Telefone" />
       </div>
       </div>
       <div class="form-row">
       <div class="form-group col-sm-6">
         <label for="">CPF:</label>
-        <input class="form-control" type="date" placeholder="Insira sua Data de Nascimento" />
+        <input class="form-control" type="text" placeholder="Insira o CPF" formControlName="cpf" mask="000.000.000-00"  [ngClass]="{'is-invalid' : formulario.get('cpf').errors && formulario.get('cpf').touched }" />
+        <div class="invalid-feedback" >CPF obrigatório</div>
       </div>
       <div class="form-group col-sm-6">
         <label for="">Data de Nascimento:</label>
-        <input class="form-control" type="text" placeholder="Insira o CPF" />
+        <input class="form-control" type="date" formControlName="dataNascimento" placeholder="Insira sua Data de Nascimento" />
       </div>
       </div>
       <div class="form-row">
         <div class="form-group col-sm-6">
           <label for="">Senha:</label>
-          <input class="form-control" type="password" placeholder="Digite uma Senha" />
+          <input class="form-control" type="password" placeholder="Digite uma Senha" formControlName="senha" [ngClass]="{'is-invalid' : formulario.get('senha').errors && formulario.get('senha').touched }"  />
+          <div class="invalid-feedback">Senha obrigatório</div>
         </div>
         <div class="form-group col-sm-6">
           <label for="">Confirmar Senha:</label>
-          <input class="form-control" type="password" placeholder="Confirme a Senha" />
+          <input class="form-control" type="password" placeholder="Confirme a Senha" formControlName="confirmaSenha" />
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-sm-6">
             <label for="myfile">Selecione um icone:</label>
-            <input type="file" id="myfile" name="myfile">
+            <input type="file" id="myfile" name="myfile" formControlName="imagem">
         </div>
       </div>
-      <div class="form-row p-1 mb-3">
+      <div *ngIf=!ocultar class="form-row p-1 mb-3">
         <div class="custom-control custom-checkbox">
           <input type="checkbox" class="custom-control-input" id="customCheck1">
           <label class="custom-control-label">Eu concordo com os <a href="#">Termos de Uso</a>.</label>
         </div>
       </div>
       <div class="form-row">
-        <div class="form-group col-12">
-          <button class="btn btn-lg btn-success btn-block px-5">
+        <div class="form-group col-6">
+          <button class="btn btn-lg btn-success btn-block px-5" [disabled]="!formulario.valid">
             Registar
+          </button>
+        </div>
+        <div class="form-group col-6">
+          <button class="btn btn-lg btn-danger btn-block px-5" (click)="resetForm()">
+            Cancelar
           </button>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-12">
-          <a class="btn btn-link btn-block" routerLink="/login">
+          <a *ngIf=!ocultar class="btn btn-link btn-block" routerLink="/login">
             Já sou Cadastrado
           </a>
         </div>

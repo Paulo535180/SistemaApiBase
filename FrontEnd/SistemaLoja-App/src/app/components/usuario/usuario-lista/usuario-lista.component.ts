@@ -1,6 +1,7 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
+import { Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef, BsModalService, ModalDirective } from 'ngx-bootstrap/modal';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Usuario } from 'src/app/models/Usuario';
@@ -12,18 +13,27 @@ import { UsuarioService } from 'src/app/services/Usuario.service';
   styleUrls: ['./usuario-lista.component.scss']
 })
 export class UsuarioListaComponent implements OnInit {
-  dtOptions: DataTables.Settings = {}
+
+
+
+  @ViewChild('lgModal', { static: false }) modalUsuario: ModalDirective= {} as ModalDirective;
+  dtOptions: DataTables.Settings = {};
   modalRef = {} as BsModalRef;
+
   public usuarios: Usuario[] = [];
   public exibirImagem: boolean = true;
+  @Input() botaoAdicionar = true;
+  public usuario: any = {};
 
   constructor(
     private usuarioService: UsuarioService,
     private modalService: BsModalService,
     private toastr: ToastrService,
     private spinner: NgxSpinnerService,
-    private router: Router
-    ) {}
+    private router: Router,
+    ){}
+
+
 
 
   public ngOnInit():void {
@@ -68,24 +78,26 @@ export class UsuarioListaComponent implements OnInit {
       complete: ()=> this.spinner.hide()
     });
   }
+
   public inserirUsuario(): void {}
 
-  openModal(template: TemplateRef<any>):void {
+  public openModal(template: TemplateRef<any>):void {
     this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
   }
 
-  confirm(): void {
+  public confirm(): void {
     this.modalRef.hide();
     this.toastr.success('Usuário Desativado', 'Sucesso');
   }
 
-  decline(): void {
+  public decline(): void {
     this.modalRef.hide();
     this.toastr.warning('Cancelada', 'Operação');
   }
 
-  detalhesUsuario(id: number):void{
-    this.router.navigate([`usuario/detalhe/${id}`]);
+  public modalAdicionarUsuario():void {
+    this.modalUsuario.show();
   }
+
 
 }

@@ -11,13 +11,13 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //MÓDULOS
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
 import { UsuarioListaComponent } from './components/usuario/usuario-lista/usuario-lista.component';
-import { UsuarioDetalheComponent } from './components/usuario/usuario-detalhe/usuario-detalhe.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { PerfisComponent } from './components/perfis/perfis.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
@@ -34,6 +34,7 @@ import { CpfFormatPipe } from './helpers/CpfFormat.pipe';
 
 //DATATABLES
 import { DataTablesModule } from "angular-datatables";
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
 
@@ -46,7 +47,6 @@ import { DataTablesModule } from "angular-datatables";
     TituloComponent,
     DateTimeFormatPipe,
     CpfFormatPipe,
-    UsuarioDetalheComponent,
     UsuarioListaComponent,
     LoginComponent,
     CadastroComponent
@@ -55,6 +55,8 @@ import { DataTablesModule } from "angular-datatables";
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     CollapseModule.forRoot(),
     HttpClientModule,
@@ -71,7 +73,8 @@ import { DataTablesModule } from "angular-datatables";
       }
     ),
     NgxSpinnerModule,
-    DataTablesModule
+    DataTablesModule,
+    NgxMaskModule.forRoot()
   ],
 
   providers: [

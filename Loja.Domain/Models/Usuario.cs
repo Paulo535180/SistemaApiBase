@@ -37,7 +37,7 @@ namespace Loja.Domain.Models
 
         [JsonPropertyName("data_nascimento")]
         public DateTime? DATA_NASCIMENTO { get; set; }
-
+        
         public bool STATUS { get; set; }
 
         public DateTime? DATA_CRIACAO { get; set; }

@@ -1,5 +1,5 @@
-﻿using Loja.Domain.Interfaces;
-using Loja.Domain.Models;
+﻿using Loja.Domain.Models;
+using Loja.Service.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -10,25 +10,25 @@ namespace Loja.UI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuarioController : ControllerBase
+    public class PerfilController : ControllerBase
     {
-        private readonly IUsuario _usuarioRepository;
-        public UsuarioController(IUsuario usuario)
+        private readonly IPerfil _perfil;
+        public PerfilController(IPerfil perfil)
         {
-            _usuarioRepository = usuario;
+            _perfil = perfil;
         }
 
         [HttpGet]
-        public IActionResult Usuarios()
+        public IActionResult Perfis()
         {
             try
             {
-                var usuario = _usuarioRepository.SelectAll();
-                if (usuario == null)
+                var perfil = _perfil.SelectAll();
+                if (perfil == null)
                 {
-                    return NotFound("Lista de Usuários vazia!");
+                    return NotFound("Lista de Perfis vazia!");
                 }
-                return Ok(usuario);
+                return Ok(perfil);
             }
             catch (Exception ex)
             {
@@ -37,16 +37,16 @@ namespace Loja.UI.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public async Task<IActionResult> UsuarioPorId(int id)
+        public async Task<IActionResult> PerfilPorId(int id)
         {
             try
             {
-                var usuario = await _usuarioRepository.SelectId(id);
-                if (usuario != null)
+                var perfil = await _perfil.SelectId(id);
+                if (perfil != null)
                 {
-                    return StatusCode(200, usuario);
+                    return StatusCode(200, perfil);
                 }
-                return NotFound("Nenhum Usuário encontrado!");
+                return NotFound("Nenhum Perfil encontrado!");
             }
             catch (Exception ex)
             {
@@ -54,21 +54,15 @@ namespace Loja.UI.Controllers
             }
         }
 
-
         [HttpPost]
-        public async Task<IActionResult> Criar([FromBody] Usuario usuario)
+        public async Task<IActionResult> Criar([FromBody] Perfil perfil)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    var usuarioExiste = await _usuarioRepository.SelectId(usuario.ID);
-                    if (usuarioExiste != null)
-                    {
-                        await _usuarioRepository.Insert(usuario);
-                        return StatusCode(201, "Objeto criado");
-                    }
-                    throw new Exception("Usuário já existe na Base de Dados!");
+                    await _perfil.Insert(perfil);
+                    return StatusCode(201, "Objeto criado");
                 }
                 throw new Exception("Modelo inválido");
             }
@@ -79,16 +73,16 @@ namespace Loja.UI.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public async Task<IActionResult> Atualizar(int id, [FromBody] Usuario usuario)
+        public async Task<IActionResult> Atualizar(int id, [FromBody] Perfil perfil)
         {
             try
             {
-                if (id != usuario.ID)
+                if (id != perfil.ID)
                     return Conflict();
                 if (!ModelState.IsValid)
                     return UnprocessableEntity(ModelState);
 
-                await _usuarioRepository.Update(usuario);
+                await _perfil.Update(perfil);
                 return Accepted();
             }
             catch (Exception ex)
@@ -102,7 +96,7 @@ namespace Loja.UI.Controllers
         {
             try
             {
-                await _usuarioRepository.Delete(id);
+                await _perfil.Delete(id);
                 return Ok();
             }
             catch (Exception ex)
