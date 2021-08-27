@@ -6,6 +6,7 @@ using Loja.Service.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +14,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -46,14 +48,16 @@ namespace Loja.UI
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 s.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
             });
-            
+
 
             // Tipos de ciclo de vida do objeto: 
             // Transciente: Obtém uma nova instância do objeto a cada solicitação
             // Scoped: Reutiliza a mesma instância do objeto durante todo o request(web)
             // Singleton: Utiliza a mesma instância para toda a aplicação(cuidado em casos de utilização de mais de um servidor)
+            services.AddScoped<IDbConnection>(conn => new SqlConnection(Configuration.GetConnectionString("Context")));
             services.AddScoped<IUsuario, UsuarioRepository>();
             services.AddScoped<IPerfil, PerfilRepository>();
+            services.AddScoped<IUsuarioPerfil, UsuarioPerfilRepository>();
         }
 
        

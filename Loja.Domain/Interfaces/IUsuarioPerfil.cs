@@ -14,6 +14,6 @@ namespace Loja.Domain.Interfaces
         Task Update(UsuarioPerfil usuarioPerfil);
         Task Delete(int id);
         Task DeleteRange(UsuarioPerfil[] UsuarioPerfis);
-        
+        Task<bool> ExisteVinculo(int idUsuario, int idPerfil);
     }
 }

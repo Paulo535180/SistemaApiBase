@@ -23,7 +23,6 @@
         <th scope="col">#ID</th>
         <th scope="col">NOME</th>
         <th scope="col">DESCRICAO</th>
-        <!-- <th scope="col">STATUS</th> -->
         <th scope="col">AÇÕES</th>
       </tr>
     </thead>
@@ -32,10 +31,6 @@
         <th scope="row">{{perfil.id}}</th>
         <td>{{perfil.perfil}}</td>
         <td>{{perfil.descricao}}</td>
-        <!-- <td>
-          <button type="button" class="btn btn-success btn-sm" *ngIf="usuario.status == true"><i class="fas fa-power-off"></i></button>
-          <button type="button" class="btn btn-danger" *ngIf="usuario.status != true"><i class="fas fa-power-off"></i></button>
-        </td> -->
         <td>
           <button type="button" class="btn btn-danger btn-sm mr-2" tooltip="Desativar" (click)="openModal(template)"><i class="fas fa-power-off mr-1" ></i>Desativar</button>
           <button type="button" class="btn btn-warning btn-sm"  tooltip="Editar"><i class="fa fa-edit mr-1"></i>Editar</button>
@@ -47,6 +42,15 @@
 </div>
 
 
+<ng-template #template>
+  <div class="modal-body text-center">
+    <p>Você confirma a operação?</p>
+    <button type="button" class="btn btn-default" (click)="confirm()" >Sim</button>
+    <button type="button" class="btn btn-primary" (click)="decline()" >Não</button>
+  </div>
+</ng-template>
+
+
 <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1"
      role="dialog" aria-labelledby="dialog-sizes-name1">
   <div class="modal-dialog modal-lg">
@@ -56,71 +60,8 @@
 
       </div>
 
-      <div class="modal-body">
-        <!-- <div class="col-md-12">
-
-          <form class="p-1">
-            <div class="pb-2 d-block d-md-none">
-              <h3 class="border-bottom">Cadastro de Usuário</h3>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-sm-12">
-                <label>Nome Completo</label>
-                <input type="text" class="form-control" formControlName="nome" placeholder="Insira o nome completo" />
-              </div>
-
-            </div>
-            <div class="form-group">
-              <label for="">Email:</label>
-              <input class="form-control" type="text" formControlName="email" placeholder="Insira o Nome Completo" />
-            </div>
-            <div class="form-row">
-            <div class="form-group col-sm-6">
-              <label for="">Usuario:</label>
-              <input class="form-control" type="text" formControlName="login" placeholder="Insira o nome de Usuário/Login" />
-            </div>
-            <div class="form-group col-sm-6">
-              <label for="">Telefone:</label>
-              <input class="form-control" type="text"  placeholder="Insira o Número de Telefone" />
-            </div>
-            </div>
-            <div class="form-row">
-            <div class="form-group col-sm-6">
-              <label for="">CPF:</label>
-              <input class="form-control" type="date" formControlName="cpf" placeholder="Insira sua Data de Nascimento" />
-            </div>
-            <div class="form-group col-sm-6">
-              <label for="">Data de Nascimento:</label>
-              <input class="form-control" type="text" placeholder="Insira o CPF" />
-            </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-sm-6">
-                <label for="">Senha:</label>
-                <input class="form-control" type="password" formControlName="senha" placeholder="Digite uma Senha" />
-              </div>
-              <div class="form-group col-sm-6">
-                <label for="">Confirmar Senha:</label>
-                <input class="form-control" type="password" placeholder="Confirme a Senha" />
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-sm-6">
-                  <label for="myfile">Selecione uma Imagem:</label>
-                  <input type="file" id="myfile" name="myfile">
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group col-12">
-                <button class="btn btn-lg btn-success btn-block px-5">
-                  Cadastrar
-                </button>
-              </div>
-            </div>
-
-          </form>
-        </div> -->
+      <div class="modal-body" id="modalBody">
+        <app-cadastroPerfilForm (evento)="lgModal.hide()"></app-cadastroPerfilForm>
       </div>
     </div>
   </div>

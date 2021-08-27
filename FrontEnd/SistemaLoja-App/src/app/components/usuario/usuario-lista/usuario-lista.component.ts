@@ -14,8 +14,6 @@ import { UsuarioService } from 'src/app/services/Usuario.service';
 })
 export class UsuarioListaComponent implements OnInit {
 
-
-
   @ViewChild('lgModal', { static: false }) modalUsuario: ModalDirective= {} as ModalDirective;
   dtOptions: DataTables.Settings = {};
   modalRef = {} as BsModalRef;
@@ -56,8 +54,7 @@ export class UsuarioListaComponent implements OnInit {
             "last": "Último"
         },
         lengthMenu:"Exibir _MENU_ resultados por página"
-      }
-  };
+      }};
   }
 
   public alterarImagem(){

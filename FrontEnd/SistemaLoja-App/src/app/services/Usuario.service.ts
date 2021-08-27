@@ -9,7 +9,7 @@ import { Usuario } from '../models/Usuario';
   )
 export class UsuarioService {
 
-baseUrl =  'https://localhost:5001/api/Usuario'
+baseUrl =  'https://localhost:5001/api/Usuario/Usuarios'
 
 constructor(private http: HttpClient) { }
 
@@ -17,7 +17,7 @@ getUsuarios() : Observable<Usuario[]>{
   return this.http.get<Usuario[]>(this.baseUrl);
 }
 
-getUsuarioPorId(id: number) : Observable<Usuario>{
+getUsuarioPorId (id: number) : Observable<Usuario>{
   return this.http.get<Usuario>(`${this.baseUrl}/${id}`);
 }
 

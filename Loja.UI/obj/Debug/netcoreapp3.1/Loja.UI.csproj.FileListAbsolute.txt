@@ -172,3 +172,5 @@ C:\devOut\Sistema_Loja\Loja.UI\obj\Debug\netcoreapp3.1\Loja.UI.dll
 C:\devOut\Sistema_Loja\Loja.UI\obj\Debug\netcoreapp3.1\Loja.UI.xml
 C:\devOut\Sistema_Loja\Loja.UI\obj\Debug\netcoreapp3.1\Loja.UI.pdb
 C:\devOut\Sistema_Loja\Loja.UI\obj\Debug\netcoreapp3.1\Loja.UI.genruntimeconfig.cache
+C:\devOut\Sistema_Loja\Loja.UI\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\devOut\Sistema_Loja\Loja.UI\bin\Debug\netcoreapp3.1\Dapper.SimpleCRUD.dll

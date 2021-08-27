@@ -66,6 +66,8 @@
   </div>
 </ng-template>
 
+
+
 <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1"
      role="dialog" aria-labelledby="dialog-sizes-name1">
   <div class="modal-dialog modal-lg">
@@ -75,8 +77,8 @@
 
       </div>
 
-      <div class="modal-body">
-        <app-cadastro [ocultar]=true (evento)="lgModal.hide()"></app-cadastro>
+      <div class="modal-body" id="modalBody">
+        <app-cadastroUsuarioForm [ocultar]=true (evento)="lgModal.hide()"></app-cadastroUsuarioForm>
 
       </div>
     </div>

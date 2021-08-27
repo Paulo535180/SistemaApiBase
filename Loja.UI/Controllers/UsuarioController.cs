@@ -18,7 +18,7 @@ namespace Loja.UI.Controllers
             _usuarioRepository = usuario;
         }
 
-        [HttpGet]
+        [HttpGet("Usuarios")]
         public IActionResult Usuarios()
         {
             try

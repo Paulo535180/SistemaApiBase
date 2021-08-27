@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "tDSyS1nuuBlGuMVUYx+czwm9I0Rus9v+nUh5SbOaKKT6/mrMPw4QIy6SxxFvJT4uXbWTeF3wj+zzejOMgO4FLg==",
+  "dgSpecHash": "xSSorIZ4Nb/Jg9yBE51uzZTb7ZHjPGPVZ+TXzTgUn7mAd+VFEsKjJ+fotAbEwKOtPG+IDegqrEX4Fq88Cu9UQg==",
   "success": true,
   "projectFilePath": "C:\\devOut\\Sistema_Loja\\Loja.UI\\Loja.UI.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\paulo.aguiar\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
+    "C:\\Users\\paulo.aguiar\\.nuget\\packages\\dapper.simplecrud\\2.3.0\\dapper.simplecrud.2.3.0.nupkg.sha512",
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
@@ -72,7 +74,7 @@
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
-    "C:\\Users\\paulo.aguiar\\.nuget\\packages\\system.reflection.emit.lightweight\\4.3.0\\system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
+    "C:\\Users\\paulo.aguiar\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\system.reflection.extensions\\4.3.0\\system.reflection.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\system.reflection.typeextensions\\4.3.0\\system.reflection.typeextensions.4.3.0.nupkg.sha512",

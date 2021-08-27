@@ -1,36 +1,36 @@
 <div class="row mt-4">
-	<div [ngClass]="apresentacaoImagem()">
+ <div [ngClass]="apresentacaoImagem()">
 		<div class="text-center col-md-12 my-auto side-heder">
 			<h1>Cadastro de Usuário</h1>
 			<img src="/assets/registerImage.png" style="background-size: 1200px 800px;background-repeat: no-repeat;" class="my-4" id="imgForm" alt="" width="500px">
 		</div>
 	</div>
 
-	<div [ngClass]="apresentacaoFormulario()" class="col-md-6">
+	<div [ngClass]="apresentacaoformularioUsuario()" class="col-md-6">
 
-		<form class="p-1" [formGroup]="formulario">
+		<form novalidate (ngSubmit)="inserirUsuario()" class="p-1" [formGroup]="formularioUsuario">
       <div *ngIf=!ocultar class="pb-2 d-block d-md-none">
         <h3 class="border-bottom">Cadastro de Usuário</h3>
       </div>
       <div class="form-row">
         <div class="form-group col-sm-12">
           <label>Nome Completo</label>
-          <input type="text" class="form-control" placeholder="Insira o nome completo" formControlName="nome" [ngClass]="{'is-invalid' : formulario.get('nome').errors && formulario.get('nome').touched }" />
-          <div *ngIf="formulario.get('nome').hasError('required')" class="invalid-feedback">Nome obrigatório</div>
-          <div *ngIf="formulario.get('nome').hasError('minlength')" class="invalid-feedback">Minimo 10 caracteres</div>
-          <div *ngIf="formulario.get('nome').hasError('maxlength')" class="invalid-feedback">Máximo 100 caracteres</div>
+          <input type="text" class="form-control" placeholder="Insira o nome completo" formControlName="nome" [ngClass]="{'is-invalid' : formularioUsuario.get('nome').errors && formularioUsuario.get('nome').touched }" />
+          <div *ngIf="formularioUsuario.get('nome').hasError('required')" class="invalid-feedback">Nome obrigatório</div>
+          <div *ngIf="formularioUsuario.get('nome').hasError('minlength')" class="invalid-feedback">Minimo 10 caracteres</div>
+          <div *ngIf="formularioUsuario.get('nome').hasError('maxlength')" class="invalid-feedback">Máximo 100 caracteres</div>
         </div>
 
       </div>
       <div class="form-group">
         <label for="">Email:</label>
-        <input class="form-control" type="text" placeholder="Insira o email" formControlName="email" [ngClass]="{'is-invalid' : formulario.get('email').errors && formulario.get('email').touched }"/>
+        <input class="form-control" type="text" placeholder="Insira o email" formControlName="email" [ngClass]="{'is-invalid' : formularioUsuario.get('email').errors && formularioUsuario.get('email').touched }"/>
         <div class="invalid-feedback">E-mail inválido</div>
       </div>
       <div class="form-row">
       <div class="form-group col-sm-6">
         <label for="">Login:</label>
-        <input class="form-control" type="text" placeholder="Insira o nome de Usuário/Login" formControlName="login" [ngClass]="{'is-invalid' : formulario.get('login').errors && formulario.get('login').touched }" />
+        <input class="form-control" type="text" placeholder="Insira o nome de Usuário/Login" formControlName="login" [ngClass]="{'is-invalid' : formularioUsuario.get('login').errors && formularioUsuario.get('login').touched }" />
         <div class="invalid-feedback">Login obrigatório</div>
       </div>
       <div class="form-group col-sm-6">
@@ -41,7 +41,7 @@
       <div class="form-row">
       <div class="form-group col-sm-6">
         <label for="">CPF:</label>
-        <input class="form-control" type="text" placeholder="Insira o CPF" formControlName="cpf" mask="000.000.000-00"  [ngClass]="{'is-invalid' : formulario.get('cpf').errors && formulario.get('cpf').touched }" />
+        <input class="form-control" type="text" placeholder="Insira o CPF" formControlName="cpf" mask="000.000.000-00"  [ngClass]="{'is-invalid' : formularioUsuario.get('cpf').errors && formularioUsuario.get('cpf').touched }" />
         <div class="invalid-feedback" >CPF obrigatório</div>
       </div>
       <div class="form-group col-sm-6">
@@ -52,7 +52,7 @@
       <div class="form-row">
         <div class="form-group col-sm-6">
           <label for="">Senha:</label>
-          <input class="form-control" type="password" placeholder="Digite uma Senha" formControlName="senha" [ngClass]="{'is-invalid' : formulario.get('senha').errors && formulario.get('senha').touched }"  />
+          <input class="form-control" type="password" placeholder="Digite uma Senha" formControlName="senha" [ngClass]="{'is-invalid' : formularioUsuario.get('senha').errors && formularioUsuario.get('senha').touched }"  />
           <div class="invalid-feedback">Senha obrigatório</div>
         </div>
         <div class="form-group col-sm-6">
@@ -74,7 +74,7 @@
       </div>
       <div class="form-row">
         <div class="form-group col-6">
-          <button class="btn btn-lg btn-success btn-block px-5" [disabled]="!formulario.valid">
+          <button class="btn btn-lg btn-success btn-block px-5" type="submit" [disabled]="!formularioUsuario.valid">
             Registar
           </button>
         </div>

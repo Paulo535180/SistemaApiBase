@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/internal/Observable';
+import { Observable, Subscriber } from 'rxjs';
 import { Perfil } from '../models/Perfil';
 
 @Injectable({
@@ -8,13 +8,11 @@ import { Perfil } from '../models/Perfil';
 })
 export class PerfilService {
 
-
-  baseUrl =  'https://localhost:5001/api/Perfil'
+baseUrl = 'https://localhost:5001/api/Perfil/Perfis'
 
 constructor(private http: HttpClient) { }
 
-
-getPerfis() : Observable<Perfil[]>{
+public getPerfis(): Observable<Perfil[]>{
   return this.http.get<Perfil[]>(this.baseUrl);
 }
 

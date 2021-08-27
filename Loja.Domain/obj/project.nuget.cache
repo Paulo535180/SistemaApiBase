@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "cPOQ1+p8j+FLxK1Szqj4sU7Ho/1+qYMR7kueHLPXSt3OHQNUyknT2N6/Mgz0l5TqaQoEsVfrmk83E7CUU48Z+A==",
+  "dgSpecHash": "6aH6ZTZOLl5SmuPG+t49MJfcnp4rHwgAnL4YrJxWnK7Iq9WiB3Bx2WOQu9xGdDtcrjZbZCTAkuzXLp4D5buCWQ==",
   "success": true,
   "projectFilePath": "C:\\devOut\\Sistema_Loja\\Loja.Domain\\Loja.Domain.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\paulo.aguiar\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
+    "C:\\Users\\paulo.aguiar\\.nuget\\packages\\dapper.simplecrud\\2.3.0\\dapper.simplecrud.2.3.0.nupkg.sha512",
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
@@ -66,7 +68,7 @@
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\system.reflection\\4.3.0\\system.reflection.4.3.0.nupkg.sha512",
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\system.reflection.emit\\4.3.0\\system.reflection.emit.4.3.0.nupkg.sha512",
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\system.reflection.emit.ilgeneration\\4.3.0\\system.reflection.emit.ilgeneration.4.3.0.nupkg.sha512",
-    "C:\\Users\\paulo.aguiar\\.nuget\\packages\\system.reflection.emit.lightweight\\4.3.0\\system.reflection.emit.lightweight.4.3.0.nupkg.sha512",
+    "C:\\Users\\paulo.aguiar\\.nuget\\packages\\system.reflection.emit.lightweight\\4.7.0\\system.reflection.emit.lightweight.4.7.0.nupkg.sha512",
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\system.reflection.extensions\\4.3.0\\system.reflection.extensions.4.3.0.nupkg.sha512",
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\system.reflection.primitives\\4.3.0\\system.reflection.primitives.4.3.0.nupkg.sha512",
     "C:\\Users\\paulo.aguiar\\.nuget\\packages\\system.reflection.typeextensions\\4.3.0\\system.reflection.typeextensions.4.3.0.nupkg.sha512",

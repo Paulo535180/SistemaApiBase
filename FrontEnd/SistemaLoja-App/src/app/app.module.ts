@@ -22,7 +22,6 @@ import { NavComponent } from './shared/nav/nav.component';
 import { PerfisComponent } from './components/perfis/perfis.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { TituloComponent } from './shared/titulo/titulo.component';
-import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { LoginComponent } from './components/login/login.component';
 
 //SERVICES
@@ -35,6 +34,8 @@ import { CpfFormatPipe } from './helpers/CpfFormat.pipe';
 //DATATABLES
 import { DataTablesModule } from "angular-datatables";
 import { NgxMaskModule } from 'ngx-mask';
+import { CadastroUsuarioFormComponent } from './components/formularios/cadastroUsuarioForm/cadastroUsuarioForm.component';
+import { CadastroPerfilFormComponent } from './components/formularios/cadastroPerfilForm/cadastroPerfilForm.component';
 
 @NgModule({
 
@@ -49,7 +50,8 @@ import { NgxMaskModule } from 'ngx-mask';
     CpfFormatPipe,
     UsuarioListaComponent,
     LoginComponent,
-    CadastroComponent
+    CadastroUsuarioFormComponent,
+    CadastroPerfilFormComponent
    ],
 
   imports: [

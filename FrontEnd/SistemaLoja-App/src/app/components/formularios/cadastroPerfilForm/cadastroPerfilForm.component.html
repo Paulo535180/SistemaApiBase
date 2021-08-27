@@ -1,0 +1,35 @@
+<div class="row mt-4">
+   <div class="col-md-6">
+     <form novalidate (ngSubmit)="adicionarPerfil()" class="p-1" [formGroup]="formularioPerfil">
+
+       <div class="form-row">
+         <div class="form-group col-sm-12">
+           <label>Nome Perfil</label>
+           <input type="text" class="form-control" placeholder="Insira o nome do Perfil" formControlName="perfil" [ngClass]="{'is-invalid' : formularioPerfil.get('perfil').errors && formularioPerfil.get('perfil').touched }"  />
+           <div *ngIf="formularioPerfil.get('perfil').hasError('required')" class="invalid-feedback">Nome do Perfil obrigatório</div>
+           <div *ngIf="formularioPerfil.get('perfil').hasError('minlength')" class="invalid-feedback">Minimo 10 caracteres</div>
+           <div *ngIf="formularioPerfil.get('perfil').hasError('maxlength')" class="invalid-feedback">Máximo 50 caracteres</div>
+         </div>
+       </div>
+       <div class="form-group">
+         <label for="">Descrição:</label>
+         <input class="form-control" type="text" placeholder="Insira a descricao do Perfil" formControlName="descricao" [ngClass]="{'is-invalid' : formularioPerfil.get('descricao').errors && formularioPerfil.get('descricao').touched }" />
+         <div *ngIf="formularioPerfil.get('descricao').hasError('required')" class="invalid-feedback">Descrição do Perfil obrigatório</div>
+         <div *ngIf="formularioPerfil.get('descricao').hasError('minlength')" class="invalid-feedback">Minimo 10 caracteres</div>
+           <div *ngIf="formularioPerfil.get('descricao').hasError('maxlength')" class="invalid-feedback">Máximo 200 caracteres</div>
+       </div>
+       <div class="form-row">
+        <div class="form-group col-6">
+          <button class="btn btn-lg btn-success btn-block px-5" type="submit" [disabled]="!formularioPerfil.valid">
+            Registar
+          </button>
+        </div>
+        <div class="form-group col-6">
+          <button class="btn btn-lg btn-danger btn-block px-5" (click)="resetForm()">
+            Cancelar
+          </button>
+        </div>
+      </div>
+      </form>
+   </div>
+ </div>

@@ -18,17 +18,17 @@ namespace Loja.UI.Controllers
             _perfil = perfil;
         }
 
-        [HttpGet]
+        [HttpGet("Perfis")]
         public IActionResult Perfis()
         {
             try
             {
-                var perfil = _perfil.SelectAll();
-                if (perfil == null)
+                var perfis = _perfil.SelectAll();
+                if (perfis == null)
                 {
                     return NotFound("Lista de Perfis vazia!");
                 }
-                return Ok(perfil);
+                return Ok(perfis);
             }
             catch (Exception ex)
             {
