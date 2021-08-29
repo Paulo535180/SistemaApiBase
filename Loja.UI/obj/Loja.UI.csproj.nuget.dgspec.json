@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\devOut\\Sistema_Loja\\Loja.UI\\Loja.UI.csproj": {}
+    "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.UI\\Loja.UI.csproj": {}
   },
   "projects": {
-    "C:\\devOut\\Sistema_Loja\\Loja.Domain\\Loja.Domain.csproj": {
+    "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.Domain\\Loja.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\devOut\\Sistema_Loja\\Loja.Domain\\Loja.Domain.csproj",
+        "projectUniqueName": "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.Domain\\Loja.Domain.csproj",
         "projectName": "Loja.Domain",
-        "projectPath": "C:\\devOut\\Sistema_Loja\\Loja.Domain\\Loja.Domain.csproj",
-        "packagesPath": "C:\\Users\\paulo.aguiar\\.nuget\\packages\\",
-        "outputPath": "C:\\devOut\\Sistema_Loja\\Loja.Domain\\obj\\",
+        "projectPath": "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.Domain\\Loja.Domain.csproj",
+        "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\paulo.aguiar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\paulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -80,24 +80,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\devOut\\Sistema_Loja\\Loja.Service\\Loja.Service.csproj": {
+    "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.Service\\Loja.Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\devOut\\Sistema_Loja\\Loja.Service\\Loja.Service.csproj",
+        "projectUniqueName": "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.Service\\Loja.Service.csproj",
         "projectName": "Loja.Service",
-        "projectPath": "C:\\devOut\\Sistema_Loja\\Loja.Service\\Loja.Service.csproj",
-        "packagesPath": "C:\\Users\\paulo.aguiar\\.nuget\\packages\\",
-        "outputPath": "C:\\devOut\\Sistema_Loja\\Loja.Service\\obj\\",
+        "projectPath": "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.Service\\Loja.Service.csproj",
+        "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\paulo.aguiar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\paulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -112,8 +112,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\devOut\\Sistema_Loja\\Loja.Domain\\Loja.Domain.csproj": {
-                "projectPath": "C:\\devOut\\Sistema_Loja\\Loja.Domain\\Loja.Domain.csproj"
+              "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.Domain\\Loja.Domain.csproj": {
+                "projectPath": "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.Domain\\Loja.Domain.csproj"
               }
             }
           }
@@ -164,24 +164,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\devOut\\Sistema_Loja\\Loja.UI\\Loja.UI.csproj": {
+    "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.UI\\Loja.UI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\devOut\\Sistema_Loja\\Loja.UI\\Loja.UI.csproj",
+        "projectUniqueName": "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.UI\\Loja.UI.csproj",
         "projectName": "Loja.UI",
-        "projectPath": "C:\\devOut\\Sistema_Loja\\Loja.UI\\Loja.UI.csproj",
-        "packagesPath": "C:\\Users\\paulo.aguiar\\.nuget\\packages\\",
-        "outputPath": "C:\\devOut\\Sistema_Loja\\Loja.UI\\obj\\",
+        "projectPath": "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.UI\\Loja.UI.csproj",
+        "packagesPath": "C:\\Users\\paulo\\.nuget\\packages\\",
+        "outputPath": "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.UI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\paulo.aguiar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\paulo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -196,11 +196,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\devOut\\Sistema_Loja\\Loja.Domain\\Loja.Domain.csproj": {
-                "projectPath": "C:\\devOut\\Sistema_Loja\\Loja.Domain\\Loja.Domain.csproj"
+              "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.Domain\\Loja.Domain.csproj": {
+                "projectPath": "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.Domain\\Loja.Domain.csproj"
               },
-              "C:\\devOut\\Sistema_Loja\\Loja.Service\\Loja.Service.csproj": {
-                "projectPath": "C:\\devOut\\Sistema_Loja\\Loja.Service\\Loja.Service.csproj"
+              "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.Service\\Loja.Service.csproj": {
+                "projectPath": "C:\\dev\\SistemaApi+Angular\\SistemaApiBase\\Loja.Service\\Loja.Service.csproj"
               }
             }
           }
@@ -258,7 +258,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

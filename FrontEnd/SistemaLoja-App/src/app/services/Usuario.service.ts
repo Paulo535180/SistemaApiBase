@@ -13,7 +13,17 @@ baseUrl =  'https://localhost:5001/api/Usuario/Usuarios'
 
 constructor(private http: HttpClient) { }
 
-getUsuarios() : Observable<Usuario[]>{
+
+criarUsuario (usuario:Usuario){
+
+}
+
+login (usuario:Usuario){
+
+}
+getUsuarios(
+
+) : Observable<Usuario[]>{
   return this.http.get<Usuario[]>(this.baseUrl);
 }
 

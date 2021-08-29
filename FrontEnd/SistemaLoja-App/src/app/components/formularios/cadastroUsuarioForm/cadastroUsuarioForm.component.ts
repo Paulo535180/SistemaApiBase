@@ -1,5 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { NgBrazilValidators } from 'ng-brazil';
+import { Usuario } from 'src/app/models/Usuario';
+import {utilsBr} from 'js-brasil'
+import { CustomValidators } from 'ng2-validation';
+import { UsuarioService } from 'src/app/services/Usuario.service';
 
 @Component({
   selector: 'app-cadastroUsuarioForm',
@@ -9,12 +14,14 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class CadastroUsuarioFormComponent implements OnInit {
 
   public formularioUsuario: FormGroup = new FormGroup({});
-  usuario
+  public usuario:Usuario;
+
+  MASKS = utilsBr.MASKS;
 
   @Input() public ocultar: boolean = false;
   @Output() evento = new EventEmitter();
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private usuarioService: UsuarioService) { }
 
   ngOnInit() {
     this.validacaoForm();
@@ -37,16 +44,20 @@ export class CadastroUsuarioFormComponent implements OnInit {
   }
 
   public validacaoForm () :void {
+
+    let senha = new FormControl ('', [Validators.required, CustomValidators.rangeLength([6,20])]);
+    let confirmaSenha = new FormControl ('', [Validators.required, CustomValidators.rangeLength([6,20]), CustomValidators.equalTo(senha)]);
+
     this.formularioUsuario = this.formBuilder.group(
       {
         nome:['',[Validators.required, Validators.minLength(10), Validators.maxLength(100)]],
-        email: ['',Validators.required],
+        email: ['',[Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$")]],
         login: ['',Validators.required],
         telefone: [''],
-        cpf: ['',[Validators.required, Validators.maxLength(14)]],
+        cpf: ['',[Validators.required, Validators.maxLength(14), NgBrazilValidators.cpf]],
         dataNascimento: [''],
-        senha: ['',[Validators.required, Validators.minLength(6), Validators.maxLength(20)]],
-        confirmaSenha: ['',[Validators.required,Validators.minLength(6), Validators.maxLength(20)]],
+        senha: senha,
+        confirmaSenha: confirmaSenha,
         imagem: [''],
       });
   }
@@ -57,7 +68,7 @@ export class CadastroUsuarioFormComponent implements OnInit {
   }
 
   public async inserirUsuario() {
-   this.usuario = Object.assign({}, this.usuario, this.formularioUsuario)
-
+   this.usuario = Object.assign({}, this.usuario, this.formularioUsuario);
+   this.usuarioService.criarUsuario(this.usuario)
   }
 }

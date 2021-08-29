@@ -18,7 +18,7 @@ namespace Loja.UI.Controllers
             _usuarioRepository = usuario;
         }
 
-        [HttpGet("Usuarios")]
+        [HttpGet]
         public IActionResult Usuarios()
         {
             try
@@ -62,8 +62,9 @@ namespace Loja.UI.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    //Pesquisar usuario sempre por CPF
                     var usuarioExiste = await _usuarioRepository.SelectId(usuario.ID);
-                    if (usuarioExiste != null)
+                    if (usuarioExiste == null)
                     {
                         await _usuarioRepository.Insert(usuario);
                         return StatusCode(201, "Objeto criado");

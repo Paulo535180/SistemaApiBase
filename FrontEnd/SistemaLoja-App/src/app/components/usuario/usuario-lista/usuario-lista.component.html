@@ -40,7 +40,7 @@
         <td>{{usuario.data_nascimento | DateTimeFormat}}</td>
         <td>{{usuario.email}}</td>
         <td>{{usuario.cpf | CpfFormat}}</td>
-        <td>{{usuario.telefone}}</td>
+        <td>{{usuario.telefone | CelphoneFormat }}</td>
         <td>
           <button type="button" class="btn btn-success btn-sm" *ngIf="usuario.status == true"><i class="fas fa-power-off"></i></button>
           <button type="button" class="btn btn-danger" *ngIf="usuario.status != true"><i class="fas fa-power-off"></i></button>

@@ -16,3 +16,13 @@ C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.AssemblyI
 C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.csproj.CoreCompileInputs.cache
 C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.dll
 C:\devOut\Sistema_Loja\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.pdb
+C:\dev\SistemaApi+Angular\SistemaApiBase\Loja.Domain\bin\Debug\netcoreapp3.1\Loja.Domain.deps.json
+C:\dev\SistemaApi+Angular\SistemaApiBase\Loja.Domain\bin\Debug\netcoreapp3.1\Loja.Domain.dll
+C:\dev\SistemaApi+Angular\SistemaApiBase\Loja.Domain\bin\Debug\netcoreapp3.1\Loja.Domain.pdb
+C:\dev\SistemaApi+Angular\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.csproj.AssemblyReference.cache
+C:\dev\SistemaApi+Angular\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\dev\SistemaApi+Angular\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.AssemblyInfoInputs.cache
+C:\dev\SistemaApi+Angular\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.AssemblyInfo.cs
+C:\dev\SistemaApi+Angular\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.csproj.CoreCompileInputs.cache
+C:\dev\SistemaApi+Angular\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.dll
+C:\dev\SistemaApi+Angular\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.pdb
