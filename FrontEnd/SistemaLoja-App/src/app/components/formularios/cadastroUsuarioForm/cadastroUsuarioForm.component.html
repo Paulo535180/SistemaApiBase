@@ -15,24 +15,27 @@
       <div class="form-row">
         <div class="form-group col-sm-12">
           <label>Nome Completo</label>
-          <input type="text" class="form-control" placeholder="Insira o nome completo" formControlName="nome" [ngClass]="{'is-invalid' : formularioUsuario.get('nome').errors && formularioUsuario.get('nome').touched }" />
-          <div *ngIf="formularioUsuario.get('nome').hasError('required')" class="invalid-feedback">Nome obrigatório</div>
-          <div *ngIf="formularioUsuario.get('nome').hasError('minlength')" class="invalid-feedback">Minimo 10 caracteres</div>
-          <div *ngIf="formularioUsuario.get('nome').hasError('maxlength')" class="invalid-feedback">Máximo 100 caracteres</div>
+          <input type="text" class="form-control" placeholder="Insira o nome completo" formControlName="nome" [ngClass]="{'is-invalid' : displayMessage.nome}" />
+         <span class="text-danger" *ngIf="displayMessage.nome">
+           <p [innerHTML]="displayMessage.nome"></p>
+         </span>
         </div>
 
       </div>
       <div class="form-group">
         <label for="">Email:</label>
-        <input class="form-control" type="email" placeholder="Insira o email" formControlName="email" [ngClass]="{'is-invalid' : formularioUsuario.get('email').errors && formularioUsuario.get('email').touched }"/>
-        <div *ngIf="formularioUsuario.get('email').hasError('required')" class="invalid-feedback">E-mail obrigatório</div>
-        <div *ngIf="formularioUsuario.get('email').hasError('pattern')" class="invalid-feedback">E-mail inválido</div>
+        <input class="form-control" type="email" placeholder="Insira o email" formControlName="email" [ngClass]="{'is-invalid' : displayMessage.email}"/>
+        <span class="text-danger" *ngIf="displayMessage.email">
+          <p [innerHTML]="displayMessage.email"></p>
+        </span>
       </div>
       <div class="form-row">
       <div class="form-group col-sm-6">
         <label for="">Login:</label>
-        <input class="form-control" type="text" placeholder="Insira o nome de Usuário/Login" formControlName="login" [ngClass]="{'is-invalid' : formularioUsuario.get('login').errors && formularioUsuario.get('login').touched }" />
-        <div class="invalid-feedback">Login obrigatório</div>
+        <input class="form-control" type="text" placeholder="Insira o nome de Usuário/Login" formControlName="login" [ngClass]="{'is-invalid' : displayMessage.login}" />
+        <span class="text-danger" *ngIf="displayMessage.login">
+          <p [innerHTML]="displayMessage.login"></p>
+        </span>
       </div>
       <div class="form-group col-sm-6">
         <label for="">Telefone:</label>
@@ -42,8 +45,10 @@
       <div class="form-row">
       <div class="form-group col-sm-6">
         <label for="">CPF:</label>
-        <input class="form-control" type="text" placeholder="Insira o CPF" formControlName="cpf" cpf [textMask]="{mask: MASKS.cpf.textMask}" [ngClass]="{'is-invalid' : formularioUsuario.get('cpf').errors && formularioUsuario.get('cpf').touched }" />
-        <div class="invalid-feedback" >CPF inválido</div>
+        <input class="form-control" type="text" placeholder="Insira o CPF" formControlName="cpf" cpf [textMask]="{mask: MASKS.cpf.textMask}" [ngClass]="{'is-invalid' : displayMessage.cpf}" />
+        <span class="text-danger" *ngIf="displayMessage.cpf">
+          <p [innerHTML]="displayMessage.cpf"></p>
+        </span>
       </div>
       <div class="form-group col-sm-6">
         <label for="">Data de Nascimento:</label>
@@ -53,19 +58,23 @@
       <div class="form-row">
         <div class="form-group col-sm-6">
           <label for="">Senha:</label>
-          <input class="form-control" type="password" placeholder="Digite uma Senha" formControlName="senha" [ngClass]="{'is-invalid' : formularioUsuario.get('senha').errors && formularioUsuario.get('senha').touched }"  />
-          <div class="invalid-feedback">Senha obrigatório</div>
+          <input class="form-control" type="password" placeholder="Digite uma Senha" formControlName="senha"  [ngClass]="{'is-invalid' : displayMessage.senha}"  />
+          <span class="text-danger" *ngIf="displayMessage.senha">
+            <p [innerHTML]="displayMessage.senha"></p>
+          </span>
         </div>
         <div class="form-group col-sm-6">
           <label for="">Confirmar Senha:</label>
-          <input class="form-control" type="password" placeholder="Confirme a Senha" formControlName="confirmaSenha" [ngClass]="{'is-invalid' : formularioUsuario.get('confirmaSenha').errors && formularioUsuario.get('confirmaSenha').touched }"/>
-          <div *ngIf="formularioUsuario.get('confirmaSenha').hasError('equalTo')" class="invalid-feedback" class="invalid-feedback">Senhas não conferem</div>
+          <input class="form-control" type="password" placeholder="Confirme a Senha" formControlName="confirmaSenha" [ngClass]="{'is-invalid' : displayMessage.confirmaSenha}" />
+          <span class="text-danger" *ngIf="displayMessage.confirmaSenha">
+            <p [innerHTML]="displayMessage.confirmaSenha"></p>
+          </span>
         </div>
       </div>
       <div class="form-row">
         <div class="form-group col-sm-6">
             <label for="myfile">Selecione um icone:</label>
-            <input type="file" id="myfile" name="myfile" formControlName="imagem">
+            <input type="file" id="myfile" name="myfile" formControlName="foto"  (change)="arquivo($event.target.files)">
         </div>
       </div>
       <div *ngIf=!ocultar class="form-row p-1 mb-3">

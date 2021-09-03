@@ -9,25 +9,34 @@ import { Usuario } from '../models/Usuario';
   )
 export class UsuarioService {
 
-baseUrl =  'https://localhost:5001/api/Usuario/Usuarios'
+baseUrl =  'https://localhost:5001/api/Usuario'
 
 constructor(private http: HttpClient) { }
 
 
-criarUsuario (usuario:Usuario){
+public criarUsuario (usuario: Usuario): Observable<Usuario>{
+  return this.http.post<Usuario>(this.baseUrl, usuario);
+}
+
+public atualizarUsuario (id: number, usuario: Usuario): Observable<Usuario> {
+  return this.http.put<Usuario>(`${this.baseUrl}/${id}`, usuario)
+}
+
+
+public excluir (id: number): Observable<string>{
+  return this.http.delete<string>(`${this.baseUrl}/${id}`)
+}
+public login (usuario:Usuario){
+
+}
+public getUsuarios() : Observable<Usuario[]>{
+  let result = this.http.get<Usuario[]>(this.baseUrl);
+  console.log(result)
+  return result;
 
 }
 
-login (usuario:Usuario){
-
-}
-getUsuarios(
-
-) : Observable<Usuario[]>{
-  return this.http.get<Usuario[]>(this.baseUrl);
-}
-
-getUsuarioPorId (id: number) : Observable<Usuario>{
+public getUsuarioPorId (id: number) : Observable<Usuario>{
   return this.http.get<Usuario>(`${this.baseUrl}/${id}`);
 }
 

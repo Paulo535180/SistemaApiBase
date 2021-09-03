@@ -19,6 +19,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using AutoMapper;
 
 namespace Loja.UI
 {
@@ -39,6 +40,7 @@ namespace Loja.UI
             services.AddDbContext<Context>(options => options.UseSqlServer(Configuration.GetConnectionString("Context")));
             services.AddCors();
             services.AddMvc();
+            services.AddAutoMapper(typeof(Startup));
             services.AddRazorPages();
             services.AddSwaggerGen(s =>
             {
@@ -47,7 +49,7 @@ namespace Loja.UI
                 var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
                 var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
                 s.IncludeXmlComments(xmlPath, includeControllerXmlComments: true);
-            });
+            });            
 
 
             // Tipos de ciclo de vida do objeto: 

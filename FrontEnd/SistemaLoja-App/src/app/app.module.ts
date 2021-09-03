@@ -19,11 +19,9 @@ import { CustomFormsModule } from 'ng2-validation';
 //MÓDULOS
 import { AppComponent } from './app.component';
 import { UsuarioComponent } from './components/usuario/usuario.component';
-import { UsuarioListaComponent } from './components/usuario/usuario-lista/usuario-lista.component';
 import { NavComponent } from './shared/nav/nav.component';
 import { PerfisComponent } from './components/perfis/perfis.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { TituloComponent } from './shared/titulo/titulo.component';
 import { CadastroUsuarioFormComponent } from './components/formularios/cadastroUsuarioForm/cadastroUsuarioForm.component';
 import { CadastroPerfilFormComponent } from './components/formularios/cadastroPerfilForm/cadastroPerfilForm.component';
 import { LoginComponent } from './components/conta/login/login.component';
@@ -51,11 +49,9 @@ import { DataTablesModule } from "angular-datatables";
     NavComponent,
     DashboardComponent,
     PerfisComponent,
-    TituloComponent,
     DateTimeFormatPipe,
     CpfFormatPipe,
     CelphoneFormatPipe,
-    UsuarioListaComponent,
     CadastroUsuarioFormComponent,
     CadastroPerfilFormComponent,
     LoginComponent,
@@ -87,7 +83,7 @@ import { DataTablesModule } from "angular-datatables";
     NgxMaskModule.forRoot(),
     NgBrazil,
     TextMaskModule,
-    CustomFormsModule
+    CustomFormsModule,
   ],
 
   providers: [

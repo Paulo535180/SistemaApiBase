@@ -1,5 +1,7 @@
-﻿using Loja.Domain.Interfaces;
+﻿using AutoMapper;
+using Loja.Domain.Interfaces;
 using Loja.Domain.Models;
+using Loja.UI.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -13,9 +15,11 @@ namespace Loja.UI.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuario _usuarioRepository;
-        public UsuarioController(IUsuario usuario)
+        private readonly IMapper _mapper;
+        public UsuarioController(IUsuario usuario, IMapper mapper)
         {
             _usuarioRepository = usuario;
+            _mapper = mapper;
         }
 
         [HttpGet]
@@ -23,12 +27,13 @@ namespace Loja.UI.Controllers
         {
             try
             {
-                var usuario = _usuarioRepository.SelectAll();
-                if (usuario == null)
+                var usuarios = _usuarioRepository.SelectAll();
+                if (usuarios == null)
                 {
                     return NotFound("Lista de Usuários vazia!");
                 }
-                return Ok(usuario);
+                
+                return Ok(usuarios);
             }
             catch (Exception ex)
             {
@@ -54,18 +59,21 @@ namespace Loja.UI.Controllers
             }
         }
 
-
         [HttpPost]
-        public async Task<IActionResult> Criar([FromBody] Usuario usuario)
+        public async Task<IActionResult> Criar([FromBody] UsuarioViewModel usuarioModel)
         {
             try
             {
+                var usuario = _mapper.Map<Usuario>(usuarioModel);
                 if (ModelState.IsValid)
                 {
                     //Pesquisar usuario sempre por CPF
-                    var usuarioExiste = await _usuarioRepository.SelectId(usuario.ID);
+                    var usuarioExiste = await _usuarioRepository.ExisteUsuario(usuario.CPF);
                     if (usuarioExiste == null)
                     {
+                        usuario.STATUS = true;
+                        usuario.DATA_CRIACAO = DateTime.Now;
+                        usuario.USUARIO_CRIACAO = usuarioModel.nome;
                         await _usuarioRepository.Insert(usuario);
                         return StatusCode(201, "Objeto criado");
                     }
@@ -79,18 +87,29 @@ namespace Loja.UI.Controllers
             }
         }
 
-        [HttpPut("{id:int}")]
-        public async Task<IActionResult> Atualizar(int id, [FromBody] Usuario usuario)
+        [HttpPut("{id:int}")]        
+        public async Task<IActionResult> Atualizar(int id, [FromBody] UsuarioViewModel usuarioModel)
         {
             try
             {
-                if (id != usuario.ID)
+                if (id != usuarioModel.id)
                     return Conflict();
+
                 if (!ModelState.IsValid)
                     return UnprocessableEntity(ModelState);
 
+                var usuario = await  _usuarioRepository.SelectId(usuarioModel.id);
+                if (usuario == null) return NotFound("Usuario não encontrado!");
+
+                usuarioModel.id = usuario.ID;
+
+                _mapper.Map(usuarioModel,usuario);
+
+                usuario.DATA_ALTERACAO = DateTime.Now;
+                usuario.USUARIO_ALTERACAO = usuario.NOME;
                 await _usuarioRepository.Update(usuario);
-                return Accepted();
+
+                return Accepted("Atualizado!");
             }
             catch (Exception ex)
             {
@@ -104,7 +123,7 @@ namespace Loja.UI.Controllers
             try
             {
                 await _usuarioRepository.Delete(id);
-                return Ok();
+                return Ok("Deletado");
             }
             catch (Exception ex)
             {

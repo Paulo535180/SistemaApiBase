@@ -13,6 +13,7 @@ export class NavComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
   mostrarNav():boolean{
     return this.router.url != '/login' && this.router.url != '/cadastro'
   }

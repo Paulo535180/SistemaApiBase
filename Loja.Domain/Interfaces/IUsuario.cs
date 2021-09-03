@@ -12,5 +12,6 @@ namespace Loja.Domain.Interfaces
         Task Update(Usuario usuario);
         Task Delete(int id);
         Task DeleteRange(Usuario[] usuarios);
+        Task<Usuario> ExisteUsuario(string cpf);
     }
 }

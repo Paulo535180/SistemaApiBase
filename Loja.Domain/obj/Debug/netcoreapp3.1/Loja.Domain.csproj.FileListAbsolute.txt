@@ -26,3 +26,12 @@ C:\dev\SistemaApi+Angular\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loj
 C:\dev\SistemaApi+Angular\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.csproj.CoreCompileInputs.cache
 C:\dev\SistemaApi+Angular\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.dll
 C:\dev\SistemaApi+Angular\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.pdb
+C:\devOut\SistemaApiBase\Loja.Domain\bin\Debug\netcoreapp3.1\Loja.Domain.deps.json
+C:\devOut\SistemaApiBase\Loja.Domain\bin\Debug\netcoreapp3.1\Loja.Domain.dll
+C:\devOut\SistemaApiBase\Loja.Domain\bin\Debug\netcoreapp3.1\Loja.Domain.pdb
+C:\devOut\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.csproj.AssemblyReference.cache
+C:\devOut\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.AssemblyInfoInputs.cache
+C:\devOut\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.AssemblyInfo.cs
+C:\devOut\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.csproj.CoreCompileInputs.cache
+C:\devOut\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.dll
+C:\devOut\SistemaApiBase\Loja.Domain\obj\Debug\netcoreapp3.1\Loja.Domain.pdb
