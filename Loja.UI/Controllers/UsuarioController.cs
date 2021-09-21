@@ -121,7 +121,7 @@ namespace Loja.UI.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             try
-            {
+            {                
                 await _usuarioRepository.Delete(id);
                 return Ok("Deletado");
             }

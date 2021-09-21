@@ -14,7 +14,8 @@
         "outputPath": "C:\\devOut\\SistemaApiBase\\Loja.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\paulo.aguiar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -102,7 +103,8 @@
         "outputPath": "C:\\devOut\\SistemaApiBase\\Loja.Service\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\paulo.aguiar\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -194,7 +196,8 @@
         "outputPath": "C:\\devOut\\SistemaApiBase\\Loja.UI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
           "C:\\Users\\paulo.aguiar\\AppData\\Roaming\\NuGet\\NuGet.Config",

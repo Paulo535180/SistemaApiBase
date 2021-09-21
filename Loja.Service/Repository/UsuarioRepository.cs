@@ -43,7 +43,8 @@ namespace Loja.Service.Repository
         }
         public async Task Delete(int id)
         {
-            _context.Remove(id);
+            var usuario = await SelectId(id);
+            _context.Set<Usuario>().Remove(usuario);
             await SaveChanges();
         }
 
