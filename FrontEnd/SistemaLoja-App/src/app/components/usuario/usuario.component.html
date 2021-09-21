@@ -34,8 +34,7 @@
       </tr>
     </thead>
     <tbody style="text-align: center;">
-      <tr *ngFor="let usuario of usuarios"
-      >
+      <tr *ngFor="let usuario of usuarios">
         <th scope="row">{{usuario.id}}</th>
         <td>{{usuario.nome}}</td>
         <td>{{usuario.data_nascimento | DateTimeFormat}}</td>
@@ -48,7 +47,7 @@
         </td>
         <td>
 
-          <button type="button" class="btn btn-danger btn-sm mr-2" tooltip="Desativar" (click)="openModal(template)"><i class="fas fa-power-off mr-1" ></i>Desativar</button>
+          <button type="button" class="btn btn-danger btn-sm mr-2" tooltip="Desativar" (click)="openModal(template, usuario.id)"><i class="fas fa-power-off mr-1" ></i>Desativar</button>
           <button type="button" class="btn btn-warning btn-sm"  tooltip="Editar"><i class="fa fa-edit mr-1"></i>Editar</button>
 
         </td>
@@ -61,7 +60,7 @@
 
 <ng-template #template>
   <div class="modal-body text-center">
-    <p>Você confirma a operação?</p>
+    <p>Você confirma a deleção do Usuário {{this.usuarioId}}?</p>
     <button type="button" class="btn btn-default" (click)="confirm()" >Sim</button>
     <button type="button" class="btn btn-primary" (click)="decline()" >Não</button>
   </div>

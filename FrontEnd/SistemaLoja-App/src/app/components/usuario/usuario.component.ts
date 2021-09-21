@@ -16,8 +16,9 @@ export class UsuarioComponent implements OnInit {
   @ViewChild('lgModal', { static: false }) modalUsuario: ModalDirective= {} as ModalDirective;
   dtOptions: DataTables.Settings = {};
   modalRef = {} as BsModalRef;
-  usuarioId = undefined;
 
+
+  public usuarioId = 0;
   public usuarios: Usuario[] = [];
   public exibirImagem: boolean = true;
   @Input() botaoAdicionar = true;
@@ -64,9 +65,7 @@ export class UsuarioComponent implements OnInit {
   public getUsuarios(): void {
     this.usuarioService.getUsuarios().subscribe({
       next: (_usuarios: Usuario[]) => {
-
       this.usuarios = _usuarios;
-
       },
       error: (error:any) => {
         this.spinner.hide();
@@ -80,13 +79,13 @@ export class UsuarioComponent implements OnInit {
 
   public openModal(template: TemplateRef<any>, usuarioId: number) : void {
     this.usuarioId = usuarioId;
+    console.log(this.usuarioId);
     this.modalRef = this.modalService.show(template, {class: 'modal-sm'});
   }
 
   public confirm(): void {
     this.modalRef.hide();
     this.spinner.show();
-
     this.usuarioService.excluir(this.usuarioId).subscribe(
       (result: string) => {
         if(result == 'Deletado'){
